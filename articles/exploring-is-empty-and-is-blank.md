@@ -20,11 +20,11 @@ StringUtils.isEmpty(" bob ") = false
 ## StringUtils.isNotEmpty()
 `StringUtils.isEmpty()`とは逆です。
 ```java
-StringUtils.isEmpty(null) = false
-StringUtils.isEmpty("") = false
-StringUtils.isEmpty(" ") = true
-StringUtils.isEmpty("bob") = true
-StringUtils.isEmpty(" bob ") = true
+StringUtils.isNotEmpty(null) = false
+StringUtils.isNotEmpty("") = false
+StringUtils.isNotEmpty(" ") = true
+StringUtils.isNotEmpty("bob") = true
+StringUtils.isNotEmpty(" bob ") = true
 ```
 ## StringUtils.isAnyEmpty()
 複数の文字列にいずれか「**NULL**、**空文字**」があれば、`true`になります。
@@ -40,13 +40,13 @@ StringUtils.isAnyEmpty("foo", "bar") = false
 ## StringUtils.isNoneEmpty()
 `StringUtils.isAnyEmpty()`とは逆です。複数の文字列に「**NULL**、**空文字**」がなければ、`true`になります。
 ```java
-StringUtils.isAnyEmpty(null) = false
-StringUtils.isAnyEmpty(null, "foo") = false
-StringUtils.isAnyEmpty("", "bar") = false
-StringUtils.isAnyEmpty("bob", "") = false
-StringUtils.isAnyEmpty(" bob ", null) = false
-StringUtils.isAnyEmpty(" ", "bar") = true
-StringUtils.isAnyEmpty("foo", "bar") = true
+StringUtils.isNoneEmpty(null) = false
+StringUtils.isNoneEmpty(null, "foo") = false
+StringUtils.isNoneEmpty("", "bar") = false
+StringUtils.isNoneEmpty("bob", "") = false
+StringUtils.isNoneEmpty(" bob ", null) = false
+StringUtils.isNoneEmpty(" ", "bar") = true
+StringUtils.isNoneEmpty("foo", "bar") = true
 ```
 # isBlank
 ## StringUtils.isBlank()
@@ -61,11 +61,11 @@ StringUtils.isBlank(" bob ") = false
 ## StringUtils.isNotBlank()
 `StringUtils.isBlank()`とは逆です。
 ```java
-StringUtils.isBlank(null) = false
-StringUtils.isBlank("") = false
-StringUtils.isBlank(" ") = false
-StringUtils.isBlank("bob") = true
-StringUtils.isBlank(" bob ") = true
+StringUtils.isNotBlank(null) = false
+StringUtils.isNotBlank("") = false
+StringUtils.isNotBlank(" ") = false
+StringUtils.isNotBlank("bob") = true
+StringUtils.isNotBlank(" bob ") = true
 ```
 ## StringUtils.isAnyBlank()
 複数の文字列にいずれか「**NULL**、**スペース**または**空文字**」があれば、`true`になります。
@@ -79,15 +79,15 @@ StringUtils.isAnyBlank(" bob ", null) = true
 StringUtils.isAnyBlank(" ", "bar") = true
 StringUtils.isAnyBlank("foo", "bar") = false
 ```
-## StringUtils.isAnyBlank()
+## StringUtils.isNoneBlank()
 `StringUtils.isAnyBlank()`とは逆です。複数の文字列に「**NULL**、**スペース**または**空文字**」がなければ、`true`になります。
 ```java
-StringUtils.isAnyBlank(null) = false
-StringUtils.isAnyBlank(null, "foo") = false
-StringUtils.isAnyBlank(null, null) = false
-StringUtils.isAnyBlank("", "bar") = false
-StringUtils.isAnyBlank("bob", "") = false
-StringUtils.isAnyBlank(" bob ", null) = false
-StringUtils.isAnyBlank(" ", "bar") = false
-StringUtils.isAnyBlank("foo", "bar") = true
+StringUtils.isNoneBlank(null) = false
+StringUtils.isNoneBlank(null, "foo") = false
+StringUtils.isNoneBlank(null, null) = false
+StringUtils.isNoneBlank("", "bar") = false
+StringUtils.isNoneBlank("bob", "") = false
+StringUtils.isNoneBlank(" bob ", null) = false
+StringUtils.isNoneBlank(" ", "bar") = false
+StringUtils.isNoneBlank("foo", "bar") = true
 ```
