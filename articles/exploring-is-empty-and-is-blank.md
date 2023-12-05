@@ -3,7 +3,7 @@ title: "Java：isEmptyとisBlankの違い"
 emoji: "👏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["java"]
-published: false
+published: true
 ---
 # はじめに
 普段、Java開発者としての皆は**isEmpty/isNotEmpty/isNotBlank/isBlank**が知っている方が多いですが、**isAnyEmpty/isNoneEmpty/isAnyBlank/isNoneBlank**が知らない方も少なくないかもしれません。それを一緒に探索しましょう。
