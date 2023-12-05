@@ -2,11 +2,12 @@
 title: "Java：isEmptyとisBlankの違い"
 emoji: "👏"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: []
+topics: ["java"]
 published: false
 ---
-普段、Java開発者としての皆は**isEmpty/isNotEmpty/isNotBlank/isBlank**が知っている方が多いですが、**isAnyEmpty/isNoneEmpty/isAnyBlank/isNoneBlank**が知らない方も少なくないかもしれません。では、`org.apache.commons.lang3.StringUtils`を一緒に探索しましょうか。
-# isEmpty系
+# はじめに
+普段、Java開発者としての皆は**isEmpty/isNotEmpty/isNotBlank/isBlank**が知っている方が多いですが、**isAnyEmpty/isNoneEmpty/isAnyBlank/isNoneBlank**が知らない方も少なくないかもしれません。それを一緒に探索しましょう。
+# isEmpty
 ## StringUtils.isEmpty()
 文字列が「NULL、空文字」かのチェックですが、「空文字」ではなく「スペース」のある場合に`isEmpty(" ")=false`となります。
 ```java
@@ -37,7 +38,7 @@ StringUtils.isAnyEmpty(" ", "bar") = false
 StringUtils.isAnyEmpty("foo", "bar") = false
 ```
 ## StringUtils.isNoneEmpty()
-`StringUtils.isAnyEmpty()`とは逆です。文字列は全部「NULL、空文字」ではなければ、`true`になります。
+`StringUtils.isAnyEmpty()`とは逆です。複数の文字列に「NULL、空文字」がなければ、`true`になります。
 ```java
 StringUtils.isAnyEmpty(null) = false
 StringUtils.isAnyEmpty(null, "foo") = false
@@ -47,7 +48,7 @@ StringUtils.isAnyEmpty(" bob ", null) = false
 StringUtils.isAnyEmpty(" ", "bar") = true
 StringUtils.isAnyEmpty("foo", "bar") = true
 ```
-# isBlank系
+# isBlank
 ## StringUtils.isBlank()
 文字列は「NULL、スペースまたは空文字」かどうかのチェックです。
 ```java
@@ -79,7 +80,7 @@ StringUtils.isAnyBlank(" ", "bar") = true
 StringUtils.isAnyBlank("foo", "bar") = false
 ```
 ## StringUtils.isAnyBlank()
-`StringUtils.isAnyBlank()`とは逆です。文字列は全部「NULL、スペースまたは空文字」ではなければ、`true`になります。
+`StringUtils.isAnyBlank()`とは逆です。複数の文字列に「NULL、スペースまたは空文字」がなければ、`true`になります。
 ```java
 StringUtils.isAnyBlank(null) = false
 StringUtils.isAnyBlank(null, "foo") = false
